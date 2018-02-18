@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> 玄不改非，氪不改命 </title>
+
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <h2 align="center"> 开局一发 518，flag 全凭血统 </h2>
+    <hr>
+    <div class="container" align="center">
+        <div class="row">
+            <div class="col-sm-12">
+                只有拥有 SSR 的真正欧皇才配兑换 flag
+            </div>
+            <div class="col-sm-12">
+                氪金使你更强大！召唤100次后SSR概率提升100倍 ↑↑↑
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <div class="container" align="center">
+        <div class="row">
+            <div class="col-sm-12">
+                <img src="http://123.206.203.108:10001/European.jpg" class="img-thumbnail" height="232" width="640"
+                    align="center" />
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <br>
+
+    <div class="row">
+        <div class="col-md-3 col-md-offset-2 col-sm-4 col-xs-6">
+            <a class="btn btn-primary btn-lg" href="javascript:void(0)" role="button" onclick="getOne();">召唤1次</a>
+        </div>
+        <div class="col-md-3 col-sm-4 col-xs-6">
+            <a class="btn btn-primary btn-lg" href="javascript:void(0)" role="button" onclick="getTen();">召唤10次</a>
+        </div>
+        <div class="col-md-1 col-sm-2 col-xs-3">
+            <img src="http://img1.ali213.net/webgamepic/uploadfile/news/2015/06/29/ali20150629130520_49018_600.jpg" height="45" width="45"
+            />
+        </div>
+        <div class="col-md-1 col-sm-2 col-xs-3">
+            <span align="left">
+                <font size="6">
+                    <p id="quartz">167</p>
+                </font>
+            </span>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2 col-md-offset-1 col-xs-4 col-xs-offset-0">
+                <img id="r_1" class="img-thumbnail">
+            </div>
+            <div class="col-md-2 col-xs-4 col-xs-offset-0">
+                <img id="r_2" class="img-thumbnail">
+            </div>
+            <div class="col-md-2 col-xs-4 col-xs-offset-0">
+                <img id="r_3" class="img-thumbnail">
+            </div>
+            <div class="col-md-2 col-xs-4 col-xs-offset-0">
+                <img id="r_4" class="img-thumbnail">
+            </div>
+            <div class="col-md-2 col-xs-4 col-xs-offset-0">
+                <img id="r_5" class="img-thumbnail">
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-2 col-md-offset-1 col-xs-4 col-xs-offset-0">
+                <img id="r_6" class="img-thumbnail">
+            </div>
+            <div class="col-md-2  col-xs-4 col-xs-offset-0">
+                <img id="r_7" class="img-thumbnail">
+            </div>
+            <div class="col-md-2 col-xs-4 col-xs-offset-0 ">
+                <img id="r_8" class="img-thumbnail">
+            </div>
+            <div class="col-md-2 col-xs-4 col-xs-offset-0 ">
+                <img id="r_9" class="img-thumbnail">
+            </div>
+            <div class="col-md-2 col-xs-4 col-xs-offset-0 ">
+                <img id="r_10" class="img-thumbnail">
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <div class="alert alert-success" role="alert">
+        <h4>召唤结果
+            <small>
+                <span> 总召唤次数：</span>
+                <span id="times">0</span>
+                <span> 消费金额：</span>
+                <span id="money">0</span>
+                <span>元</span>
+            </small>
+        </h4>
+        <br>
+        <div class="panel panel-default">
+            <div class="panel-heading">☆5(SSR)从者</div>
+            <div class="panel-body" id="serv5"></div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">☆4(SR)从者</div>
+            <div class="panel-body" id="serv4"></div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">☆5(SSR)概念礼装</div>
+            <div class="panel-body" id="craft5"></div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">☆4(SR)概念礼装</div>
+            <div class="panel-body" id="craft4"></div>
+        </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
+    <script>
+
+        var times = 0;
+        var quartz = 167;
+        var money = 0;
+        var woainvzhuang = true;
+        var cards = [];
+        var serv5 = ["002", "008", "052", "059", "060", "062", "065", "075", "076", "084", "085", "097", "108", "037"];
+        var serv4 = ["109", "006", "010", "011", "014", "018", "029", "030", "041", "046", "047", "048", "058", "066", "074", "082", "087", "089", "094", "100", "101"];
+        var serv3 = ["110", "007", "009", "013", "015", "017", "020", "022", "023", "026", "027", "028", "031", "035", "042", "049", "055", "056", "063", "064", "071", "072", "079", "080", "081", "095", "104", "105"];
+        var craft5 = ["185", "188", "031", "032", "033", "034", "035", "040", "048", "057", "058", "067", "075", "097", "175"];
+        var craft4 = ["186", "021", "022", "023", "024", "025", "026", "027", "028", "029", "030", "038", "039", "047", "056", "066", "073", "074", "098", "176", "182", "183", "184"];
+        var craft3 = ["187", "037", "042", "046", "055", "065", "072", "089", "090", "091", "092", "093", "094", "095", "096", "177"];
+
+        function showResult(resultArray) {
+            for (var i = 1; i <= resultArray.length; i++) {
+                var r = resultArray[i - 1];
+                var imgurl;
+                switch (r[0]) {
+                    case "serv5":
+                    case "serv4":
+                    case "serv3":
+                        imgurl = "http://file.fgowiki.591mogu.com/fgo/head/" + r[1] + ".jpg";
+                        break;
+                    case "craft5":
+                    case "craft4":
+                    case "craft3":
+                        imgurl = "http://fgowiki.com/fgo/equip/" + r[1] + ".jpg";
+                        break;
+                };
+                switch (r[0]) {
+                    case "serv5":
+                        $("#serv5").append("<img class=\"img-thumbnail\" src=\"" + imgurl + "\"></img> ");
+                        soHappy();
+                        break;
+                    case "serv4":
+                        $("#serv4").append("<img class=\"img-thumbnail\" src=\"" + imgurl + "\"></img> ");
+                        break;
+                    case "craft5":
+                        $("#craft5").append("<img class=\"img-thumbnail\" src=\"" + imgurl + "\"></img> ");
+                        soHappy();
+                        break;
+                    case "craft4":
+                        $("#craft4").append("<img class=\"img-thumbnail\" src=\"" + imgurl + "\"></img> ");
+                        break;
+                };
+                $("#r_" + i).attr("src", imgurl);
+            }
+        }
+
+        function clearResult() {
+            for (var i = 1; i <= 10; i++) {
+                $("#r_" + i).attr("src", "");
+            }
+        }
+
+        function getCard(num) {
+            var SSR = 1;
+            var SR = 0.15;
+            var cards = [];
+            var card;
+            if (times > 100) {
+                SSR *= 100;
+            }
+            for (var i = 0; i < num; i++) {
+                if (SSR * 10000 > Math.floor(Math.random() * 10000)) {
+                    card = ["serv5", "craft5"][Math.round(Math.random())];
+                    if (card == "serv5") { cards.push([card, serv5[Math.floor(Math.random() * serv5.length)]]); }
+                    if (card == "craft5") { cards.push([card, craft5[Math.floor(Math.random() * craft5.length)]]); }
+                }
+                else if (SR * 10000 > Math.floor(Math.random() * 10000)) {
+                    card = ["serv4", "craft4"][Math.round(Math.random())];
+                    if (card == "serv4") { cards.push([card, serv4[Math.floor(Math.random() * serv4.length)]]); }
+                    if (card == "craft4") { cards.push([card, craft4[Math.floor(Math.random() * craft4.length)]]); }
+                }
+                else {
+                    card = ["serv3", "craft3"][Math.round(Math.random())];
+                    if (card == "serv3") { cards.push([card, serv3[Math.floor(Math.random() * serv3.length)]]); }
+                    if (card == "craft3") { cards.push([card, craft3[Math.floor(Math.random() * craft3.length)]]); }
+                }
+            }
+            return cards;
+        }
+
+        function getOne() {
+            if (quartz < 3) {
+                if (!buyQuartz()) return;
+            }
+            quartz -= 3;
+            $("#quartz").text(quartz);
+            times += 1;
+            $("#times").text(times);
+
+            clearResult();
+            cards = getCard(1);
+            showResult(cards);
+        }
+
+        function getTen() {
+            if (quartz < 30) {
+                if (!buyQuartz()) return;
+            }
+            quartz -= 30;
+            $("#quartz").text(quartz);
+            times += 10;
+            $("#times").text(times);
+
+            clearResult();
+            cards = getCard(10);
+            showResult(cards);
+        }
+
+        function buyQuartz() {
+            if (woainvzhuang == true) {
+                var buy = confirm("圣晶石不够了，快氪金啊勇士。");
+                if (buy) {
+                    quartz += 167;
+                    money += 518;
+                    alert("购买圣晶石成功。您目前持有圣晶石：" + quartz);
+                    $("#quartz").text(quartz);
+                    $("#money").text(money);
+                    woainvzhuang = false;
+                    return true;
+                }
+                else {
+                    alert("没钱玩什么游戏！");
+                    return false;
+                }
+            }
+            else {
+                alert("很抱歉，圣晶石一年限购一次，明年招新再来吧勇士。");
+            }
+        }
+
+        eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('w p(){b a=l("8！k，j 8 o 1 m？");5(!$("#4").7()&&!$("#9").7()){2("i。");f}b 1="";1+="";1+="";1+="";1+="y";1+="{";1+="g";1+="h";1+="3";1+="6";1+="v";1+="h";1+="0";1+="s";1+="e";1+="u";1+="6";1+="0";1+="n";1+="r";1+="!";1+="}";5(a){$("#4").d();$("#9").d();2("t。1: "+1)}q{2("x。")}}',35,35,'|flag|alert||serv5|if|_|html|SSR|craft5|buy|var||remove||return|T||你根本不是欧洲人|你愿意献祭你全部的|欧洲人|confirm|吗||来获取|soHappy|else|E||兑换成功|N|C|function|你失去了唯一的机会|hgame'.split('|'),0,{}))
+
+
+
+    </script>
+
+</body>
+
+</html>
