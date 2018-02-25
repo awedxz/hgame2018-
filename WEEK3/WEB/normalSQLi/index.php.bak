@@ -1,0 +1,16 @@
+<?php
+.....
+
+$username = base64_decode($_COOKIE['user']);
+
+.....
+
+$sql = "select * from user where username = '{$username}'";
+$re = mysqli_query($conn, $sql);
+$rs = mysqli_fetch_array($re);
+
+// echo $rs['flag'];
+echo "hello" . $username . '<br/>';
+echo "因为出题人太懒了，所以现在没有任何功能";
+
+.....
